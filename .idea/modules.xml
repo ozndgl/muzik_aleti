@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/muzik_aleti.iml" filepath="$PROJECT_DIR$/muzik_aleti.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/muzik_aleti_android.iml" filepath="$PROJECT_DIR$/android/muzik_aleti_android.iml" />
+    </modules>
+  </component>
+</project>
