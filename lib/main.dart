@@ -22,9 +22,7 @@ class DrumMachine extends StatelessWidget {
 
 class DrumPage extends StatelessWidget {
 
-void muzikCalkar (muzik){
-   oynatici.play('$muzik.wav');
-}
+
 
       final oynatici = AudioCache();
   @override
@@ -38,28 +36,11 @@ void muzikCalkar (muzik){
                   child: Row(
                     children: [
                       Expanded (
-                        child: FlatButton(
-                          padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("bip");
-                          },
-                          child: Container(
-                            color: Colors.blueAccent,
-                        ),
-                        ),
+                        child: buildDrumPad("bip",Colors.blueAccent),
                       ),
-                       Expanded(
-                         child: FlatButton(
-                           padding: EdgeInsets.all(8),
-                          onPressed: (){
-                          
-                           muzikCalkar("bongo");
-                          },
-                          child: Container(
-                            color: Colors.yellow,
-                                     ),
-                                     ),
-                       ),
+                       Expanded (
+                        child: buildDrumPad("bongo",Colors.yellow),
+                      ),
                     ],
                   ),
                 ),
@@ -67,27 +48,11 @@ void muzikCalkar (muzik){
                   child: Row(
                     children: [
                       Expanded (
-                        child: FlatButton(
-                          padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("clap1");
-                          },
-                          child: Container(
-                            color: Colors.blue[50],
-                        ),
-                        ),
+                        child: buildDrumPad("clap1",Colors.pink),
                       ),
-                       Expanded(
-                         child: FlatButton(
-                           padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("clap2");
-                          },
-                          child: Container(
-                            color: Colors.pink,
-                                     ),
-                                     ),
-                       ),
+                       Expanded (
+                        child: buildDrumPad("clap2",Colors.green),
+                      ),
                     ],
                   ),
                 ),
@@ -95,27 +60,23 @@ void muzikCalkar (muzik){
                   child: Row(
                     children: [
                       Expanded (
-                        child: FlatButton(
-                          padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("clap3");
-                          },
-                          child: Container(
-                            color: Colors.indigo,
-                        ),
-                        ),
+                        child: buildDrumPad("clap3",Colors.redAccent),
                       ),
-                       Expanded(
-                         child: FlatButton(
-                           padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("crash");
-                          },
-                          child: Container(
-                            color: Colors.orange,
-                                     ),
-                                     ),
-                       ),
+                       Expanded (
+                        child: buildDrumPad("crash",Colors.amber),
+                      ),
+                    ],
+                  ),
+                ),
+                   Expanded(
+                   child: Row(
+                    children: [
+                      Expanded (
+                        child: buildDrumPad("how",Colors.brown),
+                      ),
+                       Expanded (
+                        child: buildDrumPad("oobah",Colors.blueGrey),
+                      ),
                     ],
                   ),
                 ),
@@ -123,55 +84,11 @@ void muzikCalkar (muzik){
                   child: Row(
                     children: [
                       Expanded (
-                        child: FlatButton(
-                          padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("how");
-                          },
-                          child: Container(
-                            color: Colors.orangeAccent,
-                        ),
-                        ),
+                        child: buildDrumPad("ridebel",Colors.blueAccent),
                       ),
-                       Expanded(
-                         child: FlatButton(
-                           padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("oobah");
-                          },
-                          child: Container(
-                            color: Colors.pink,
-                                     ),
-                                     ),
-                       ),
-                    ],
-                  ),
-                ),
-                   Expanded(
-                  child: Row(
-                    children: [
-                      Expanded (
-                        child: FlatButton(
-                          padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("ridebel");
-                          },
-                          child: Container(
-                            color: Colors.blueAccent,
-                        ),
-                        ),
+                       Expanded (
+                        child: buildDrumPad("woo",Colors.yellow),
                       ),
-                       Expanded(
-                         child: FlatButton(
-                           padding: EdgeInsets.all(8),
-                          onPressed: (){
-                           muzikCalkar("woo");
-                          },
-                          child: Container(
-                            color: Colors.redAccent,
-                                     ),
-                                     ),
-                       ),
                     ],
                   ),
                 ),
@@ -180,5 +97,19 @@ void muzikCalkar (muzik){
           ),
     );
          
+  }
+
+  FlatButton buildDrumPad(String gelenSes,Color renk) {
+    
+    return FlatButton(
+      
+                        padding: EdgeInsets.all(8),
+                        onPressed: (){
+                          oynatici.play('$gelenSes.wav');
+                        },
+                        child: Container(
+                          color: renk,
+                      ),
+                      );
   }
 }
